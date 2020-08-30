@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+	box-sizing: border-box;
+}
+.navbar
+{
+    padding: .8rem;
+}
+
+.container-fluid {
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+.navbar-nav li{
+    padding-right: 20px;
+}
+.nav-link{
+    font-size: 1.1em !important;
+}
+html,body{
+    height:100%;
+    width:100%;
+    font-family: 'Poppins',sans-serif;
+    color:#222;
+  }
+  .navbar-brand {
+    padding-top: 25px;
+    }
+    #hea{
+      font-family: 'dancing script';
+      font-size: 800%;
+      color: #f5f5f5;
+      text-shadow: 1px 1px 1px #222;
+      font-weight: bolder;
+      margin-top:0;
+      margin-bottom:3%;
+      margin-left: 5%;
+      line-height: .75;
+    }
+    .navbar-brand a:hover, .navbar-brand a:focus
+    {
+      text-decoration: none;
+    }
+  #j-text{
+    font-size:150%;
+    text-shadow: 1px 1px 10px #000;
+    color: #f5f5f5;
+}
+.btn-primary{
+    background-color:dodgerblue;
+    border: 1px solid dodgerblue;
+}
+#j-text:hover{
+    text-decoration: none;
+}
+  .padding{
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.social a{
+    font-size: 4.5em;
+    padding: 3rem;
+    }
+    .fa-facebook{
+    color:#3b5998;
+    }
+    .fa-twitter{
+        color:#00aced;
+    }
+    .fa-github {
+
+        color:#008000;
+    }
+    .fa-youtube{
+        color: #bb0000;
+    }
+    .fa-youtube :hover,
+    .fa-github :hover,
+    .fa-twitter :hover,
+    .fa-facebook :hover{
+        color:#d5d5d5;
+    }
+    footer{
+        background-color: #3f3f3f;
+        color:#d5d5d5;
+        padding-top:2rem;
+    }
+    hr.light{
+        border-top: 1px solid #d5d5d5;
+    }
+    h1,h2{
+        font-weight:bolder;
+
+    }
+    #prev {
+        height: 500px;
+        width: 500px;
+        background-color: powderblue;
+        margin-bottom: 2%;
+        border: 1px solid black;
+      }
+
+    /---Media Queries --/
+@media (max-width: 992px) {
+    .social a{
+        font-size: 3em;
+        padding: 2rem;
+    }
+    input{
+        width: 80%;
+    }
+      }
+    @media (max-width: 768px) {
+        .social a{
+            font-size: 2.5em;
+            padding: 1.2rem;
+        }
+        input{
+            width: 70%;
+        }
+
+      }
+
+
+    @media (max-width: 576px) {
+
+        .social a{
+            font-size: 2em;
+            padding: .7rem;
+        }
+        #prev{
+            width : 80%;
+            height : 300px;
+        }
+        input{
+            width: 50%;
+        }
+        #hea{
+            font-size:500%;
+        }
+        .lead{
+            font-size:90%;
+        }
+        h2{
+            font-size:150%;
+        }
+
+    }

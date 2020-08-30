@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music Type Classifier</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid bg-info text-white text-center" style="background-color:#aaa;">
+        <div class="container">
+            <h1 id="hea">Music Genre Classifier</h1>
+            <P class="lead py-2">
+                Are you are Rock loving person or Hip-Hop? Find out here!
+            </P>
+        </div>
+    </div>
+    </nav>
+    <section>
+        <div>
+
+        </div>
+        </div>
+        <div class="container mb-3 py-6">
+            <h2 class="text-center">Enter all the required parameters for prediction</h2>
+            <form method="POST" action="/predict">
+                <!-- acousticness	danceability	energy	instrumentalness	liveness	speechiness	tempo	valence -->
+                <div class="form-group">
+                    <label for="acousticness">Enter Acousticness</label>
+                    <input type="acousticness" class="form-control" style="width:470px;" id="acousticness" name="acousticness" placeholder="Example: 0.988306"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="danceability">Enter Danceability</label>
+                    <input type="danceability" class="form-control" style="width:470px;" id="danceability" name="danceability" placeholder="Example: 0.255661"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="energy">Enter Energy</label>
+                    <input type="energy" class="form-control" style="width:470px;" id="energy" name="energy" placeholder="Example: 0.979774"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="instrumentalness">Enter Instrumentalness</label>
+                    <input type="instrumentalness" class="form-control" style="width:470px;" id="instrumentalness" name="instrumentalness" placeholder="Example: 0.9730057241"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="liveness">Enter Liveness</label>
+                    <input type="liveness" class="form-control" style="width:470px;" id="liveness" name="liveness" placeholder="Example: 0.121342"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="speechiness">Enter Speechiness</label>
+                    <input type="speechiness" class="form-control" style="width:470px;" id="speechiness" name="speechiness" placeholder="Example: 0.051740"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="tempo">Enter Tempo</label>
+                    <input type="tempo" class="form-control" style="width:470px;" id="tempo" name="tempo" placeholder="Example: 90.241"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="valence">Enter Valence</label>
+                    <input type="valence" class="form-control" style="width:470px;" id="valence" name="valence" placeholder="Example: 0.034018"
+                        required>
+                </div>
+                <center><button class="btn btn-primary" type="submit">Predict</button></center>
+            </form>
+        </div>
+        <div class="container text-center" id="prev">
+            <h2 class="display-6 text-center">You are: {{pred_name}}</h2>
+            <br>
+            
+            <img src="/static/{{prediction}}">
+        </div>
+    </section>
+    <h2 class='text-center'>Project made in Technocolabs internship</h2>
+    <div class="container">
+
+
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center padding" id="con">
+                <div class="col-12">
+                    <h3 class="display-4">Connect</h3>
+                    <hr>
+                </div>
+                <div class="col-12 social padding">
+                    <a href="https://www.facebook.com/kaustubh.gupta.1828"><i class="fab fa-facebook"></i></a>
+                    <a href="https://github.com/kaustubhgupta"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/Kaustubh1828"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/kaustubh-gupta-612767ab/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
