@@ -21,3 +21,7 @@ Enter the relevant values in the form field and click Predict. You will get the 
 # Link to the website?
 
 Sure here you go: [Music Genre Predict](http://music-genre-predict.herokuapp.com/)
+
+# Project Report?
+
+Sure view my findings here: [Final Report](https://drive.google.com/file/d/1PBMbyTR3W60f8goebRTgTmY9uttkNE21/view)
