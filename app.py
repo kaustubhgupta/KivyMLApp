@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, request, jsonify
 import pickle
 
 app = Flask(__name__)
@@ -8,29 +8,23 @@ with open(Filename, 'rb') as file:
 
 @app.route('/')
 def index_page():
-    print(model)
-    return render_template('index.html')
+    return jsonify({'meaasge':'This is the api which returns the type of song rock or hip hop.', 
+                    'Parameters_required':'acousticness,danceability,energy,instrumentalness,liveness,speechiness,tempo,valence'})
 
 @app.route('/predict', methods=['POST', 'GET'])
 def predict_logic():
-    
-    if request.method == 'POST':
-        acousticness = float(request.form.get('acousticness'))
-        danceability = float(request.form.get('danceability'))
-        energy = float(request.form.get('energy'))
-        instrumentalness = float(request.form.get('instrumentalness'))
-        liveness = float(request.form.get('liveness'))
-        speechiness = float(request.form.get('speechiness'))                  
-        tempo = float(request.form.get('tempo'))
-        valence = float(request.form.get('valence'))
+    query = request.args
+    acousticness = float(query.get('acousticness'))
+    danceability = float(query.get('danceability'))
+    energy = float(query.get('energy'))
+    instrumentalness = float(query.get('instrumentalness'))
+    liveness = float(query.get('liveness'))
+    speechiness = float(query.get('speechiness'))                  
+    tempo = float(query.get('tempo'))
+    valence = float(query.get('valence'))
     #print(acousticness,danceability,energy,instrumentalness,liveness,speechiness,tempo,valence)
-    #print([[acousticness,danceability,energy,instrumentalness,liveness,speechiness,tempo,valence]])
     pred_name = model.predict([[acousticness,danceability,energy,instrumentalness,liveness,speechiness,tempo,valence]]).tolist()[0]
-    if  pred_name == 'Rock':
-        pred = 'rock.gif'
-    else:
-        pred = 'hip-hop.gif'
-    return render_template('index.html', prediction=pred, pred_name=pred_name)
+    return jsonify({'prediction':pred_name})
 
 if __name__ == "__main__":
     app.run(debug=True)
