@@ -132,7 +132,6 @@ class MainApp(MDApp):
         return self.help_string
 
     def predict(self):
-        #self.help_string.get_screen('main').ids.sample_text_1.text = str(self.help_string.get_screen('main').ids.slide_value_1.value)
         acousticness = self.help_string.get_screen('main').ids.input_1.text
         danceability = self.help_string.get_screen('main').ids.input_2.text
         energy = self.help_string.get_screen('main').ids.input_3.text
@@ -146,5 +145,3 @@ class MainApp(MDApp):
         self.help_string.get_screen('main').ids.output_text.text = r.json()['prediction']
 
 MainApp().run()
-
-# https://kivymlapp.herokuapp.com/predict?acousticness=0.344719513&danceability=0.758067547&energy=0.323318405&instrumentalness=0.0166768347&liveness=0.0856723112&speechiness=0.0306624283&tempo=101.993&valence=0.443876228
