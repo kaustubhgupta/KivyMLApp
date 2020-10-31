@@ -2,7 +2,8 @@ from kivymd.app import MDApp
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.core.window import Window
-from kivy.network.urlrequest import UrlRequest
+import json 
+import requests
 
 Window.size = (400,600)
 
@@ -106,9 +107,12 @@ ScreenManager:
         pos_hint: {'center_y':0.26, 'center_x':0.5}
 
     MDLabel:
-        pos_hint: {'center_x':0.5, 'center_y':0.2}
+        pos_hint: {'center_y':0.2}
+        halign: 'center'
         text: ''
         id: output_text
+        theme_text_color: "Custom"
+        text_color: 0, 1, 0, 1
 
     MDRaisedButton:
         pos_hint: {'center_x':0.5, 'center_y':0.1}
@@ -128,8 +132,18 @@ class MainApp(MDApp):
         return self.help_string
 
     def predict(self):
-        self.help_string.get_screen('main').ids.sample_text_1.text = str(self.help_string.get_screen('main').ids.slide_value_1.value)
-        self.help_string.get_screen('main').ids.sample_text_2.text = str(self.help_string.get_screen('main').ids.slide_value_2.value)
+        #self.help_string.get_screen('main').ids.sample_text_1.text = str(self.help_string.get_screen('main').ids.slide_value_1.value)
+        acousticness = self.help_string.get_screen('main').ids.input_1.text
+        danceability = self.help_string.get_screen('main').ids.input_2.text
+        energy = self.help_string.get_screen('main').ids.input_3.text
+        instrumentalness = self.help_string.get_screen('main').ids.input_4.text
+        liveness = self.help_string.get_screen('main').ids.input_5.text
+        speechiness = self.help_string.get_screen('main').ids.input_6.text
+        tempo = self.help_string.get_screen('main').ids.input_7.text
+        valence = self.help_string.get_screen('main').ids.input_8.text
+        url = f'https://kivymlapp.herokuapp.com/predict?acousticness={acousticness}&danceability={danceability}&energy={energy}&instrumentalness={instrumentalness}&liveness={liveness}&speechiness={speechiness}&tempo={tempo}&valence={valence}'
+        r = requests.get(url)
+        self.help_string.get_screen('main').ids.output_text.text = r.json()['prediction']
 
 MainApp().run()
 
