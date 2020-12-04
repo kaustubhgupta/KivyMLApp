@@ -8,6 +8,8 @@ This repo has:
 
 ### Article about how to build the Python App from scratch is live on [Analytics India Magazine](https://analyticsindiamag.com/deploying-machine-learning-models-in-android-apps-using-python/)
 
+### Article about how to convert the Python App to APk is live [here](https://towardsdatascience.com/3-ways-to-convert-python-app-into-apk-77f4c9cd55af)
+
 Here is the live demo of ML app:
 
 ![preview](preview.gif)
