@@ -1,5 +1,7 @@
 # Kivy Apps
 
+![KivyMLApp](https://socialify.git.ci/kaustubhgupta/KivyMLApp/image?language=1&theme=Light&stargazers=1&description=1&pulls=1&issues=1&forks=1&owner=1)
+
 This repo has:
 - ML Model: Music Genre Classifier API files
 - ML Model APK Files (Python file, buildozer spec & APK)
