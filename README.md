@@ -7,6 +7,7 @@ This repo has:
 - ML Model APK Files (Python file, buildozer spec & APK)
 - Basic Auth APK Files (Python file, buildozer spec & APK)
 
+_Folks, If you're coming from Analytics India Magazine article: The Flask based deployment has been replaced with FastAPI based deployment. The old flask files can be found in the Old Flask folder_
 
 ### Article about how to build the Python App from scratch is live on [Analytics India Magazine](https://analyticsindiamag.com/deploying-machine-learning-models-in-android-apps-using-python/)
 
