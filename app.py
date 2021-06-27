@@ -1,30 +1,54 @@
-from flask import Flask, request, jsonify
+import uvicorn
 import pickle
+from fastapi import FastAPI
+from pydantic import BaseModel
 
-app = Flask(__name__)
-Filename = 'model/model_tree.pkl'
-with open(Filename, 'rb') as file:  
-    model = pickle.load(file)
 
-@app.route('/')
-def index_page():
-    return jsonify({'meaasge':'This is the api which returns the type of song rock or hip hop.', 
-                    'Parameters_required':'acousticness,danceability,energy,instrumentalness,liveness,speechiness,tempo,valence'})
+class Music(BaseModel):
+    acousticness: float
+    danceability: float
+    energy: float
+    instrumentalness: float
+    liveness: float
+    speechiness: float
+    tempo: float
+    valence: float
 
-@app.route('/predict', methods=['POST', 'GET'])
-def predict_logic():
-    query = request.args
-    acousticness = float(query.get('acousticness'))
-    danceability = float(query.get('danceability'))
-    energy = float(query.get('energy'))
-    instrumentalness = float(query.get('instrumentalness'))
-    liveness = float(query.get('liveness'))
-    speechiness = float(query.get('speechiness'))                  
-    tempo = float(query.get('tempo'))
-    valence = float(query.get('valence'))
-    #print(acousticness,danceability,energy,instrumentalness,liveness,speechiness,tempo,valence)
-    pred_name = model.predict([[acousticness,danceability,energy,instrumentalness,liveness,speechiness,tempo,valence]]).tolist()[0]
-    return jsonify({'prediction':pred_name})
 
-if __name__ == "__main__":
-    app.run(debug=True)
+app = FastAPI()
+
+with open("./model/model.pkl", "rb") as f:
+    model = pickle.load(f)
+
+
+@app.get('/')
+def index():
+    return {'message': 'This is the homepage of the API '}
+
+
+@app.post('/prediction')
+def get_music_category(data: Music):
+    received = data.dict()
+    acousticness = received['acousticness']
+    danceability = received['danceability']
+    energy = received['energy']
+    instrumentalness = received['instrumentalness']
+    liveness = received['liveness']
+    speechiness = received['speechiness']
+    tempo = received['tempo']
+    valence = received['valence']
+    pred_name = model.predict([[acousticness, danceability, energy,
+                                instrumentalness, liveness, speechiness, tempo, valence]]).tolist()[0]
+    return {'prediction': pred_name}
+
+
+@app.get('/predictGet')
+def get_cat(acousticness: float, danceability: float, energy: float, instrumentalness: float, liveness: float, speechiness: float, tempo: float, valence: float):
+    pred_name = model.predict([[acousticness, danceability, energy,
+            instrumentalness, liveness, speechiness, tempo, valence]]).tolist()[0]
+    return {'prediction': pred_name}
+
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=4000, debug=True)
