@@ -42,7 +42,7 @@ def get_music_category(data: Music):
     return {'prediction': pred_name}
 
 
-@app.get('/predictGet')
+@app.get('/predict')
 def get_cat(acousticness: float, danceability: float, energy: float, instrumentalness: float, liveness: float, speechiness: float, tempo: float, valence: float):
     pred_name = model.predict([[acousticness, danceability, energy,
             instrumentalness, liveness, speechiness, tempo, valence]]).tolist()[0]
