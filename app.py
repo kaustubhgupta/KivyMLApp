@@ -2,6 +2,22 @@ import uvicorn
 import pickle
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+origins = [
+    "http://127.0.0.1:5500",
+    "https://kaustubhgupta.github.io/Brython-ML/"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class Music(BaseModel):
@@ -14,8 +30,6 @@ class Music(BaseModel):
     tempo: float
     valence: float
 
-
-app = FastAPI()
 
 with open("./model/model.pkl", "rb") as f:
     model = pickle.load(f)
