@@ -8,7 +8,7 @@ app = FastAPI()
 
 origins = [
     "http://127.0.0.1:5500",
-    "https://kaustubhgupta.github.io/Brython-ML/"
+    "https://kaustubhgupta.github.io"
 ]
 
 app.add_middleware(
