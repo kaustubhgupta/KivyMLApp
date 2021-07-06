@@ -7,8 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://127.0.0.1:5500",
-    "https://www.kaustubhgupta.me/Brython-ML/"
+    "*"
 ]
 
 app.add_middleware(
