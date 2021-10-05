@@ -1,7 +1,8 @@
-# Kivy Apps
+# Kivy Apps 📲
 
 ![KivyMLApp](https://socialify.git.ci/kaustubhgupta/KivyMLApp/image?language=1&theme=Light&stargazers=1&description=1&pulls=1&issues=1&forks=1&owner=1)
 
+## About 😁
 This repo has:
 - ML Model: Music Genre Classifier API files
 - ML Model APK Files (Python file, buildozer spec & APK)
@@ -9,7 +10,7 @@ This repo has:
 
 _Folks, If you're coming from Analytics India Magazine article: The Flask based deployment has been replaced with FastAPI based deployment. The old flask files can be found in the `Old Flask files` folder_
 
-## Related Articles 
+## Related Articles 📜
 
 These articles are written describing the different use-case of this code base.
 
@@ -19,12 +20,12 @@ These articles are written describing the different use-case of this code base.
 - [Python on Frontend: ML Models Web Interface With Brython](https://www.analyticsvidhya.com/blog/2021/07/python-on-frontend-ml-models-web-interface-with-brython/) (Analytics Vidhya)
 - [Deploying ML Models as API Using FastAPI and Heroku](https://www.analyticsvidhya.com/blog/2021/06/deploying-ml-models-as-api-using-fastapi-and-heroku/) (Analytics Vidhya)
 
-## Related Links
+## Related Links ⚡
 
 - Model API link (FastAPI API, supports both GET and POST request, without Auth): [Click me!](https://kivymlapp.herokuapp.com/)
 - The ML app apk can be found in the APK folder. If you want to experience it on the web, head over to this link: https://appetize.io/app/a8tez5nc93qyb9hhzj3k3y0ggc
 
-## Preview
+## Preview 📺
 
 Here is the GIF for ML app :-
 
