@@ -8,11 +8,11 @@ This repo has:
 - ML Model APK Files (Python file, buildozer spec & APK)
 - Basic Auth APK Files (Python file, buildozer spec & APK)
 
-_Folks, If you're coming from Analytics India Magazine article: The Flask based deployment has been replaced with FastAPI based deployment. The old flask files can be found in the `Old Flask files` folder_
+_Folks, If you're coming from the Analytics India Magazine article: The Flask-based deployment has been replaced with FastAPI based deployment. The old flask files can be found in the `Old Flask files` folder_
 
 ## Related Articles 📜
 
-These articles are written describing the different use-case of this code base.
+These articles are written describing the different use-case of this codebase.
 
 - [Deploying Machine Learning Models In Android Apps Using Python](https://analyticsindiamag.com/deploying-machine-learning-models-in-android-apps-using-python/) (Analytics India Magazine)
 - [3 Ways to Convert Python App into APK](https://towardsdatascience.com/3-ways-to-convert-python-app-into-apk-77f4c9cd55af) (Towards Data Science)
@@ -23,10 +23,10 @@ These articles are written describing the different use-case of this code base.
 ## Related Links ⚡
 
 - Model API link (FastAPI API, supports both GET and POST request, without Auth): [Click me!](https://kivymlapp.herokuapp.com/)
-- The ML app apk can be found in the APK folder. If you want to experience it on the web, head over to this link: https://appetize.io/app/a8tez5nc93qyb9hhzj3k3y0ggc
+- The ML app APK can be found in the APK folder. If you want to experience it on the web, head over to this link: https://appetize.io/app/a8tez5nc93qyb9hhzj3k3y0ggc
 
 ## Preview 📺
 
-Here is the GIF for ML app :-
+Here is the GIF for the ML app:-
 
 ![preview](preview.gif)
